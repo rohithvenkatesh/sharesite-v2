@@ -105,7 +105,7 @@ h2 {
 	#particles {
 		height: 100%;
 		position: absolute;
-		z-index: 0;
+		z-index: -1;
 		margin-left: -$padding-left;
 		width: 100%;
 	}
@@ -118,6 +118,56 @@ h2 {
 		h1,
 		h2 {
 			background: $bg;
+		}
+
+		.cta {
+			display: flex;
+			margin-top: 4rem;
+			margin-left: 1.2rem;
+			cursor: pointer;
+
+			.btn {
+				display: flex;
+				align-items: center;
+				border-radius: 1rem;
+
+				.text {
+					display: flex;
+					flex-direction: column;
+
+					.top {
+						font-size: 16px;
+					}
+					.bottom {
+						font-size: 30px;
+					}
+				}
+			}
+
+			.apple {
+				background: $black;
+				padding: 0.7rem 1rem 0.7rem 0;
+				img {
+					width: 5rem;
+					height: 3.1rem;
+					filter: brightness(0) invert(1);
+				}
+				.text {
+					color: white;
+				}
+			}
+
+			.play {
+				margin-left: 2rem;
+				border: 2px solid $black;
+				padding: 0.7rem 1rem 0.7rem 0.5rem;
+				background: $bg;
+				img {
+					width: 4rem;
+					height: 3rem;
+					margin-right: 0.1rem;
+				}
+			}
 		}
 	}
 

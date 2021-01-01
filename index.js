@@ -1,6 +1,17 @@
 let mouse = document.querySelector('.cursor');
 let el = document.querySelectorAll('a');
 
+let appleButton = document.querySelector('.btn.apple');
+let playButton = document.querySelector('.btn.play');
+
+appleButton.addEventListener('click', () => {
+	document.location.href = '#';
+});
+
+playButton.addEventListener('click', () => {
+	document.location.href = '#';
+});
+
 // particles.js
 window.onload = () => {
 	particlesJS.load('particles', 'assets/particles.json');
