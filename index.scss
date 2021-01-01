@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+$black: #040403;
+$primary: #066f6c;
+$padding-left: 9rem;
+$bg: white;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+.cursor {
+	width: 3rem;
+	height: 3rem;
+	border: 3px solid $primary;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	border-radius: 100px;
+	pointer-events: none;
+	transition: all 0.3s ease;
+	transition-property: background, transform;
+	z-index: 2;
+	transform-origin: 100% 100%;
+	backdrop-filter: grayscale;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.cursor-grow {
+	transform: scale(2);
+	background: $black;
+	border: none;
+	z-index: 1;
+}
+
+body {
+	font-size: 20px;
+	font-family: 'Monsterrat', sans-serif;
+	background: $bg;
+}
+
+nav {
+	padding: 0 $padding-left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 10rem;
+	width: 100vw;
+	display: flex;
+	z-index: 1;
+
+	ul {
+		width: 100%;
+		list-style: none;
+		display: flex;
+		align-items: center;
+
+		li > a {
+			text-decoration: none;
+			color: $black;
+			font-weight: 300;
+			padding: 2rem 0rem 2rem 3rem;
+			margin-left: 4rem;
+		}
+
+		.logo {
+			font-size: 2.2rem;
+			color: $primary;
+		}
+
+		:nth-child(2) {
+			margin-left: auto;
+		}
+	}
+}
+
+.link-color {
+	color: white;
+	font-weight: 500;
+}
+
+h1 {
+	all: unset;
+	font-size: 13.5rem;
+	font-weight: 600;
+	color: $primary;
+}
+
+h2 {
+	all: unset;
+	font-size: 3.5rem;
+	padding-left: 1rem;
+	margin-top: -2rem;
+	font-weight: 300;
+	opacity: 60%;
+}
+
+.main {
+	padding: 0 $padding-left;
+	height: 100vh;
+	position: relative;
+
+	#particles {
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+		margin-left: -$padding-left;
+		width: 100%;
+	}
+	.hero {
+		padding-top: 18rem;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+
+		h1,
+		h2 {
+			background: $bg;
+		}
+	}
+
+	.screenshots {
+		position: absolute;
+		right: 14rem;
+		top: 13rem;
+		transform: rotate(-14.73deg);
+		width: 37.5rem;
+		// border-radius: 10rem;
+		.phone {
+			width: 100%;
+			height: 100%;
+			// box-shadow: 5px 5px 10px rgb(0, 0, 0);
+			border: 2px solid $black;
+			border-radius: 4rem;
+		}
+	}
+}
+
+.categories {
+	height: 100vh;
+	background: $black;
+	overflow: hidden;
+	display: flex;
+
+	.tiles {
+		padding-left: $padding-left;
+		display: flex;
+
+		.tile {
+			width: 26rem;
+			height: 25rem;
+			border-radius: 1.5rem;
+			margin-bottom: 3rem;
+			object-fit: cover;
+		}
+
+		.left,
+		.right {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.left {
+			margin-top: -7rem;
+		}
+
+		.right {
+			margin-top: -3rem;
+			margin-left: 4rem;
+		}
+	}
+
+	.info {
+		color: $bg;
+		margin-top: 25rem;
+		margin-left: 7rem;
+
+		.covered {
+			margin-top: 20rem;
+		}
+
+		h2 {
+			opacity: 1;
+			font-weight: 300;
+		}
+
+		h3 {
+			font-size: 7rem;
+		}
+	}
+}

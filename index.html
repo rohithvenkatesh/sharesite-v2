@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share</title>
+  <link rel="stylesheet" href="/css/index.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+</head>
+<body>
+  <div class="cursor"></div>
+  <!-- navbar-->
+  <nav>
+    <ul>
+      <li class="logo">/S/</li>
+      <li class="nav-item"><a href="#categories">Categories</a></li>
+      <li class="nav-item"><a href="#">Purpose</a></li>
+    </ul>
+  </nav>
+  <!-- main-->
+  <section class="main" id="home">
+    <div id="particles"></div>
+    <div class="hero">
+      <h1>Share</h1>
+      <h2>List, Rent, Earn.</h2>
+      <div class="cta"></div>
+      <div class="screenshots"><img class="phone" src="/assets/ss/skateboard.png" alt="skateboard"><img class="phone" src="/assets/ss/beach_cruiser.png" alt="beach_cruiser"><img class="phone" src="/assets/ss/canoe.png" alt="canoe"><img class="phone" src="/assets/ss/cooler.png" alt="cooler"><img class="phone" src="/assets/ss/drink_dispenser.png" alt="drink_dispenser"><img class="phone" src="/assets/ss/jumper_cables.png" alt="jumper_cables"><img class="phone" src="/assets/ss/skateboard.png" alt="skateboard"><img class="phone" src="/assets/ss/surfboard.png" alt="surfboard"><img class="phone" src="/assets/ss/tent.png" alt="tent"></div>
+    </div>
+  </section>
+  <!-- categories-->
+  <section class="categories" id="categories">
+    <div class="tiles">
+      <div class="left"><img class="tile" src="/assets/household.png" alt="household"><img class="tile" src="/assets/tools.png" alt="tools"><img class="tile" src="/assets/misc.png" alt="misc"></div>
+      <div class="right"><img class="tile" src="/assets/equipment.png" alt="equipment"><img class="tile" src="/assets/leisure.png" alt="leisure"><img class="tile" src="/assets/more.png" alt="more"></div>
+    </div>
+    <div class="info">
+      <h2>Hammers?</h2>
+      <div class="covered">
+        <h2>We've got you</h2>
+        <h3>covered.</h3>
+      </div>
+    </div>
+  </section>
+  <!-- cursor-->
+  <script src="/index.js"></script>
+  <!-- jquery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <!-- particles.js-->
+  <script src="js/particles.min.js"></script>
+  <!-- slick-carousel-->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    	$('.screenshots').slick({
+    		fade: true,
+    		slidesToShow: 1,
+    		slidesToScroll: 1,
+    		autoplay: true,
+    		autoplaySpeed: 4000,
+    		speed: 2000,
+    		accessibility: false,
+    		arrows: false,
+    	});
+    });
+  </script>
+</body>

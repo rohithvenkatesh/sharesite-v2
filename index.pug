@@ -1,0 +1,84 @@
+doctype html
+head
+	meta(charset='UTF-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1.0')
+	title Share
+	link(rel='stylesheet' href='/css/index.min.css')
+	link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+
+body
+	.cursor
+
+	// navbar
+	nav
+		ul
+			li.logo /S/
+			li.nav-item
+				a(href="#categories") Categories
+			li.nav-item
+				a(href="#") Purpose
+
+	// main
+	section.main#home
+		#particles
+		.hero
+			h1 Share
+			h2 List, Rent, Earn.
+			.cta
+				//- .btn
+				//- 	img(src="/assets/apple_logo.png", alt="")
+				//- .btn
+				//- 	img(src="/assets/google_logo.png", alt="")
+			.screenshots
+				img.phone(src='/assets/ss/skateboard.png' alt='skateboard')
+				img.phone(src='/assets/ss/beach_cruiser.png' alt='beach_cruiser')
+				img.phone(src='/assets/ss/canoe.png' alt='canoe')
+				img.phone(src='/assets/ss/cooler.png' alt='cooler')
+				img.phone(src='/assets/ss/drink_dispenser.png' alt='drink_dispenser')
+				img.phone(src='/assets/ss/jumper_cables.png' alt='jumper_cables')
+				img.phone(src='/assets/ss/skateboard.png' alt='skateboard')
+				img.phone(src='/assets/ss/surfboard.png' alt='surfboard')
+				img.phone(src='/assets/ss/tent.png' alt='tent')
+
+	// categories
+	section.categories#categories
+		.tiles
+			.left
+				img.tile(src="/assets/household.png", alt="household")
+				img.tile(src="/assets/tools.png", alt="tools")
+				img.tile(src="/assets/misc.png", alt="misc")
+			.right
+				img.tile(src="/assets/equipment.png", alt="equipment")
+				img.tile(src="/assets/leisure.png", alt="leisure")
+				img.tile(src="/assets/more.png", alt="more")
+		.info
+			h2 Hammers?
+			.covered
+				h2 We've got you
+				h3 covered.
+
+	// cursor
+	script(src="/index.js")
+
+	// jquery
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' integrity='sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==' crossorigin='anonymous')
+
+	// particles.js
+	script(src='js/particles.min.js')
+	
+	// slick-carousel
+	script(type='text/javascript' src='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
+	script(type='text/javascript').
+		$(document).ready(function(){
+			$('.screenshots').slick({
+				fade: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 4000,
+				speed: 2000,
+				accessibility: false,
+				arrows: false,
+			});
+		});
+
