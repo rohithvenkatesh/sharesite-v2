@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $black: #040403;
 $primary: #066f6c;
@@ -37,7 +37,7 @@ $bg: white;
 
 body {
 	font-size: 20px;
-	font-family: 'Monsterrat', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	background: $bg;
 }
 
@@ -60,7 +60,7 @@ nav {
 		li > a {
 			text-decoration: none;
 			color: $black;
-			font-weight: 300;
+			font-weight: 400;
 			padding: 2rem 0rem 2rem 3rem;
 			margin-left: 4rem;
 		}
@@ -98,8 +98,8 @@ h2 {
 }
 
 .main {
-	padding: 0 $padding-left;
 	height: 100vh;
+	padding: 0 $padding-left;
 	position: relative;
 
 	#particles {
@@ -173,10 +173,10 @@ h2 {
 
 	.screenshots {
 		position: absolute;
-		right: 14rem;
+		right: 9rem;
 		top: 13rem;
 		transform: rotate(-14.73deg);
-		width: 37.5rem;
+		width: 34rem;
 		// border-radius: 10rem;
 		.phone {
 			width: 100%;
@@ -227,8 +227,35 @@ h2 {
 		margin-top: 25rem;
 		margin-left: 7rem;
 
+		.word {
+			position: absolute;
+			opacity: 0;
+			font-size: 4rem;
+		}
+
+		.letter {
+			display: inline-block;
+			position: relative;
+			// float: left;
+			transform: translateZ(25px);
+			transform-origin: 50% 50% 25px;
+		}
+		
+		.letter.out {
+			transform: rotateX(90deg);
+			transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+		}
+		
+		.letter.behind {
+			transform: rotateX(-90deg);
+		}
+		
+		.letter.in {
+			transform: rotateX(0deg);
+			transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
 		.covered {
-			margin-top: 20rem;
+			margin-top: 15rem;
 		}
 
 		h2 {
@@ -239,5 +266,116 @@ h2 {
 		h3 {
 			font-size: 7rem;
 		}
+	}
+}
+
+.purpose {
+	height: 100vh;
+	padding: $padding-left;
+	padding-top: $padding-left - 2rem;
+	display: flex;
+	.title {
+		white-space: nowrap;
+		h2 {
+			padding: 0;
+			margin: 0;
+			opacity: 100%;
+		}
+		h3 {
+			font-size: 7rem;
+			margin-top: 2rem;
+		}
+	}
+	.body {
+		line-height: 2.2rem;
+		margin-left: 7rem;
+		margin-right: 5rem;
+		letter-spacing: -0.005rem;
+	}
+}
+
+.footer {
+	height: 30vh;
+	background: #fafafa;
+	padding: $padding-left;
+	padding-top: $padding-left - 5rem;
+	display: flex;
+	justify-content: space-between;
+
+	h4 {
+		color: #066F6C;
+		font-size: 2rem;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+	}
+
+	.items {
+		flex-basis: 70%;
+		display: flex;
+		justify-content: space-between;
+
+		h5 {
+			color: #9C9C9C;
+			margin-bottom: 2rem;
+			font-weight: 500;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			font-size: 1rem;
+		}
+
+		.download {
+			.cta {
+				display: flex;
+				cursor: pointer;
+				margin-top: 2rem;
+	
+				.btn {
+					display: flex;
+					align-items: center;
+					border-radius: 1rem;
+	
+					.text {
+						display: flex;
+						flex-direction: column;
+	
+						.top {
+							font-size: 16px;
+						}
+						.bottom {
+							font-size: 30px;
+						}
+					}
+				}
+	
+				.apple {
+					background: $black;
+					padding: 0.7rem 1rem 0.7rem 0;
+					img {
+						width: 5rem;
+						height: 3.1rem;
+						filter: brightness(0) invert(1);
+					}
+					.text {
+						color: white;
+					}
+				}
+	
+				.play {
+					margin-left: 2rem;
+					border: 2px solid $black;
+					padding: 0.7rem 1rem 0.7rem 0.5rem;
+					background: $bg;
+					img {
+						width: 4rem;
+						height: 3rem;
+						margin-right: 0.1rem;
+					}
+				}
+			}
+		}
+		
 	}
 }

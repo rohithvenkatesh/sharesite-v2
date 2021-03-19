@@ -58,10 +58,51 @@ body
 				img.tile(src="/assets/leisure.png", alt="leisure")
 				img.tile(src="/assets/more.png", alt="more")
 		.info
-			h2 Hammers?
+			.words 
+				.word Boats?
+				.word Vaccuums?
+				.word Surfboards?
+				.word Tables?
+				.word Couches?
+				.word Bicycles?
+				.word Chargers?
+				.word Coolers?
+				.word Kayaks?
 			.covered
 				h2 We've got you
 				h3 covered.
+
+	// purpose
+	section.purpose#purpose
+		.title
+			h2 Who are
+			h3 We?
+		.body
+			include purpose.pug	
+
+	// footer
+	section.footer#footer
+		h4 Share
+		.items
+			.more-info 
+				h5 MORE INFO
+				a(href="#") Terms of Service
+			.contact 
+				h5 CONTACT US
+				a(href="#") jay@shareapp.app
+			.download
+				h5 DOWNLOAD FOR FREE
+				.cta
+					.btn.apple
+						img(src="/assets/apple_logo.png", alt="")
+						.text
+							.top Download on the
+							.bottom App Store
+					.btn.play
+						img(src="/assets/google_logo.png", alt="")
+						.text
+							.top Get it on the
+							.bottom  Play Store
 
 	// cursor
 	script(src="/index.js")
