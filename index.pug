@@ -4,7 +4,8 @@ head
 	meta(name='viewport' content='width=device-width, initial-scale=1.0')
 	title Share
 	link(rel='stylesheet' href='/css/index.min.css')
-	link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+	link(rel='stylesheet' type='text/css'
+	href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
 
 body
 	.cursor
@@ -58,7 +59,7 @@ body
 				img.tile(src="/assets/leisure.png", alt="leisure")
 				img.tile(src="/assets/more.png", alt="more")
 		.info
-			.words 
+			.words
 				.word Boats?
 				.word Vaccuums?
 				.word Surfboards?
@@ -78,16 +79,16 @@ body
 			h2 Who are
 			h3 We?
 		.body
-			include purpose.pug	
+			include purpose.pug
 
 	// footer
 	section.footer#footer
 		h4 Share
 		.items
-			.more-info 
+			.more-info
 				h5 MORE INFO
 				a(href="#") Terms of Service
-			.contact 
+			.contact
 				h5 CONTACT US
 				a(href="#") jay@shareapp.app
 			.download
@@ -108,13 +109,16 @@ body
 	script(src="/index.js")
 
 	// jquery
-	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' integrity='sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==' crossorigin='anonymous')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'
+	integrity='sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=='
+	crossorigin='anonymous')
 
 	// particles.js
 	script(src='js/particles.min.js')
-	
+
 	// slick-carousel
-	script(type='text/javascript' src='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
+	script(type='text/javascript'
+	src='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
 	script(type='text/javascript').
 		$(document).ready(function(){
 			$('.screenshots').slick({

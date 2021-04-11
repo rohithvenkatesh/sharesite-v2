@@ -3,7 +3,20 @@
 $black: #040403;
 $primary: #066f6c;
 $padding-left: 9rem;
+$padding-left-small: 3rem;
 $bg: white;
+
+@mixin respond-medium {
+	@media only screen and (max-width: 1115px) {
+		@content;
+	}
+}
+
+@mixin respond-small {
+	@media only screen and (max-width: 500px) {
+		@content;
+	}
+}
 
 * {
 	padding: 0;
@@ -26,6 +39,14 @@ $bg: white;
 	transform-origin: 100% 100%;
 	backdrop-filter: grayscale;
 	background: rgba(0, 0, 0, 0.05);
+
+	@include respond-small {
+		display: none;
+	}
+
+	@include respond-medium {
+		display: none;
+	}
 }
 
 .cursor-grow {
@@ -51,11 +72,21 @@ nav {
 	display: flex;
 	z-index: 1;
 
+	@include respond-small {
+		padding: 0 $padding-left-small;
+		height: 5rem;
+		// background: rgba(0, 0, 0, 0.03);
+	}
+
 	ul {
 		width: 100%;
 		list-style: none;
 		display: flex;
 		align-items: center;
+
+		@include respond-small {
+			justify-content: space-between;
+		}
 
 		li > a {
 			text-decoration: none;
@@ -63,15 +94,28 @@ nav {
 			font-weight: 400;
 			padding: 2rem 0rem 2rem 3rem;
 			margin-left: 4rem;
+
+			@include respond-small {
+				padding: 0;
+				margin-left: 0;
+				font-size: 1rem;
+			}
 		}
 
 		.logo {
 			font-size: 2.2rem;
 			color: $primary;
+
+			@include respond-small {
+				font-size: 1.2rem;
+			}
 		}
 
 		:nth-child(2) {
 			margin-left: auto;
+			@include respond-small {
+				margin: 0;
+			}
 		}
 	}
 }
@@ -86,6 +130,10 @@ h1 {
 	font-size: 13.5rem;
 	font-weight: 600;
 	color: $primary;
+
+	@include respond-small {
+		font-size: 6rem;
+	}
 }
 
 h2 {
@@ -95,12 +143,24 @@ h2 {
 	margin-top: -2rem;
 	font-weight: 300;
 	opacity: 60%;
+
+	@include respond-small {
+		margin-top: 0rem;
+		font-size: 1.5rem;
+		padding-left: 0rem;
+	}
 }
 
 .main {
 	height: 100vh;
 	padding: 0 $padding-left;
 	position: relative;
+	width: 100%;
+
+	@include respond-small {
+		padding: 0 $padding-left-small;
+		height: 55rem;
+	}
 
 	#particles {
 		height: 100%;
@@ -108,16 +168,25 @@ h2 {
 		z-index: -1;
 		margin-left: -$padding-left;
 		width: 100%;
+
+		@include respond-small {
+			margin-left: -$padding-left-small;
+		}
 	}
 	.hero {
-		padding-top: 18rem;
+		padding-top: 20rem;
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 
+		@include respond-small {
+			padding-top: 9rem;
+			align-items: center;
+		}
+
 		h1,
 		h2 {
-			background: $bg;
+			background: rgba(255, 255, 255, 0.479);
 		}
 
 		.cta {
@@ -125,6 +194,11 @@ h2 {
 			margin-top: 4rem;
 			margin-left: 1.2rem;
 			cursor: pointer;
+
+			@include respond-small {
+				flex-direction: column;
+				justify-content: center;
+			}
 
 			.btn {
 				display: flex;
@@ -134,12 +208,19 @@ h2 {
 				.text {
 					display: flex;
 					flex-direction: column;
-
 					.top {
 						font-size: 16px;
 					}
 					.bottom {
 						font-size: 30px;
+					}
+					@include respond-small {
+						.top {
+							font-size: 13px;
+						}
+						.bottom {
+							font-size: 23px;
+						}
 					}
 				}
 			}
@@ -162,6 +243,10 @@ h2 {
 				border: 2px solid $black;
 				padding: 0.7rem 1rem 0.7rem 0.5rem;
 				background: $bg;
+
+				@include respond-small {
+					margin: 1rem 0 0 0;
+				}
 				img {
 					width: 4rem;
 					height: 3rem;
@@ -185,6 +270,18 @@ h2 {
 			border: 2px solid $black;
 			border-radius: 4rem;
 		}
+
+		@include respond-small {
+			width: 15rem;
+			left: 50%;
+			right: none;
+			top: 36rem;
+			transform: translateX(-45%);
+
+			.phone {
+				border-radius: 2rem;
+			}
+		}
 	}
 }
 
@@ -193,6 +290,11 @@ h2 {
 	background: $black;
 	overflow: hidden;
 	display: flex;
+
+	@include respond-small {
+		height: max-content;
+		flex-direction: column;
+	}
 
 	.tiles {
 		padding-left: $padding-left;
@@ -220,6 +322,26 @@ h2 {
 			margin-top: -3rem;
 			margin-left: 4rem;
 		}
+
+		@include respond-small {
+			padding-left: 0;
+			margin-top: 15rem;
+			flex-direction: column;
+			margin-left: -4.5rem;
+			.tile {
+				width: 42vw;
+				height: 42vw;
+				margin-right: 1rem;
+			}
+			.left,
+			.right {
+				flex-direction: row;
+				margin: 0;
+			}
+			.right {
+				margin-left: 3rem;
+			}
+		}
 	}
 
 	.info {
@@ -227,33 +349,36 @@ h2 {
 		margin-top: 25rem;
 		margin-left: 7rem;
 
-		.word {
-			position: absolute;
-			opacity: 0;
-			font-size: 4rem;
+		.words {
+			.word {
+				position: absolute;
+				opacity: 0;
+				font-size: 4rem;
+			}
+
+			.letter {
+				display: inline-block;
+				position: relative;
+				// float: left;
+				transform: translateZ(25px);
+				transform-origin: 50% 50% 25px;
+			}
+
+			.letter.out {
+				transform: rotateX(90deg);
+				transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+			}
+
+			.letter.behind {
+				transform: rotateX(-90deg);
+			}
+
+			.letter.in {
+				transform: rotateX(0deg);
+				transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
 		}
 
-		.letter {
-			display: inline-block;
-			position: relative;
-			// float: left;
-			transform: translateZ(25px);
-			transform-origin: 50% 50% 25px;
-		}
-		
-		.letter.out {
-			transform: rotateX(90deg);
-			transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-		}
-		
-		.letter.behind {
-			transform: rotateX(-90deg);
-		}
-		
-		.letter.in {
-			transform: rotateX(0deg);
-			transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-		}
 		.covered {
 			margin-top: 15rem;
 		}
@@ -266,6 +391,31 @@ h2 {
 		h3 {
 			font-size: 7rem;
 		}
+
+		@include respond-small {
+			margin: 0;
+			margin-bottom: 3rem;
+			.words {
+				margin-top: 2rem;
+				display: flex;
+				justify-content: center;
+				.word {
+					font-size: 3rem;
+				}
+			}
+			.covered {
+				margin-top: 10rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			h2 {
+				font-size: 1rem;
+			}
+			h3 {
+				font-size: 4rem;
+			}
+		}
 	}
 }
 
@@ -274,6 +424,7 @@ h2 {
 	padding: $padding-left;
 	padding-top: $padding-left - 2rem;
 	display: flex;
+
 	.title {
 		white-space: nowrap;
 		h2 {
@@ -286,11 +437,31 @@ h2 {
 			margin-top: 2rem;
 		}
 	}
+
 	.body {
 		line-height: 2.2rem;
 		margin-left: 7rem;
 		margin-right: 5rem;
 		letter-spacing: -0.005rem;
+	}
+
+	@include respond-small {
+		height: max-content;
+		flex-direction: column;
+		padding: $padding-left-small + 1rem $padding-left-small;
+		align-items: center;
+
+		.title {
+			text-align: center;
+			line-height: 4rem;
+		}
+
+		.body {
+			margin: 0;
+			margin-top: 4rem;
+			font-size: 0.7em;
+			line-height: 1.8rem;
+		}
 	}
 }
 
@@ -303,7 +474,7 @@ h2 {
 	justify-content: space-between;
 
 	h4 {
-		color: #066F6C;
+		color: #066f6c;
 		font-size: 2rem;
 		font-weight: 600;
 		letter-spacing: 0.1rem;
@@ -313,9 +484,8 @@ h2 {
 		flex-basis: 70%;
 		display: flex;
 		justify-content: space-between;
-
 		h5 {
-			color: #9C9C9C;
+			color: #9c9c9c;
 			margin-bottom: 2rem;
 			font-weight: 500;
 		}
@@ -331,16 +501,16 @@ h2 {
 				display: flex;
 				cursor: pointer;
 				margin-top: 2rem;
-	
+
 				.btn {
 					display: flex;
 					align-items: center;
 					border-radius: 1rem;
-	
+
 					.text {
 						display: flex;
 						flex-direction: column;
-	
+
 						.top {
 							font-size: 16px;
 						}
@@ -349,7 +519,7 @@ h2 {
 						}
 					}
 				}
-	
+
 				.apple {
 					background: $black;
 					padding: 0.7rem 1rem 0.7rem 0;
@@ -362,7 +532,7 @@ h2 {
 						color: white;
 					}
 				}
-	
+
 				.play {
 					margin-left: 2rem;
 					border: 2px solid $black;
@@ -376,6 +546,36 @@ h2 {
 				}
 			}
 		}
-		
+	}
+
+	@include respond-small {
+		height: max-content;
+		padding: $padding-left-small - 2rem $padding-left-small;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		.items {
+			flex-direction: column;
+			& > * {
+				margin: 1rem 0;
+			}
+			h5 {
+				font-size: 0.8rem;
+				margin: 0rem;
+			}
+			.download > .cta {
+				margin-top: 1rem;
+				flex-direction: column;
+				justify-content: center;
+				.btn .text {
+					.bottom {
+						font-size: 20px;
+					}
+				}
+				.play {
+					margin: 0.5rem 0 0 0;
+				}
+			}
+		}
 	}
 }
